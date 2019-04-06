@@ -1,23 +1,21 @@
-# CloudNotebook
+# cloud-notebook
 
-## 产品需求 V0.0.1
-最终目标：课题最终的产品模型仿照市面上的印象云笔记和有道云笔记等类似产品，根据最终产品的需求整合其中的部分功能，最终需要将其做成Web应用的形式并且发布上线。
- 
-- 本项目使用的技术包括：使用PS进行页面设计（包括PC端和移动端） ，使用 HTML 和 CSS实现页面样式，使用 JavaScript 以及 Vue.js 实现产品业务逻辑，使用 Node.js 开发后台，使用 Git 进行项目管理和版本控制。
- 
-- 本项目支持的功能有：
+> A Vue.js project
 
-  - 登录、注册、本款在线云笔记支持微信直接登录，支持用户名注册，可以绑定微信和邮箱。（即username是一个对象，微信名，邮箱，用户名均可对应一个账户，如果没有关联账户，三者是相互独立的）
+## Build Setup
 
-  - 创建笔记本、创建笔记、删除笔记（删除笔记后进入废纸篓，再次删除才是永久删除）
+``` bash
+# install dependencies
+npm install
 
-  - 编辑笔记时支持富文本编辑、Markdown编辑（Markdown编辑需要同屏预览，同步滚屏。同屏预览直接使用或者全屏后才可使用）
+# serve with hot reload at localhost:8080
+npm run dev
 
-  - 支持笔记搜索
+# build for production with minification
+npm run build
 
-  - 为笔记添加标签
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
-  - 笔记分享（或直接允许外链查看）
-
-  - 背景音乐等。
-
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
