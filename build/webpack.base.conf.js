@@ -3,7 +3,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -35,26 +34,11 @@ module.exports = {
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          vueLoaderConfig,
-          scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-          sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
-        }
-      },
-      {
-          test: /\.css$/,
-          include: [
-              path.resolve(__dirname, "not_exist_path")
-          ],
-          loader: "style!css"
+        options: vueLoaderConfig
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: file => (
-          /node_modules/.test(file) &&
-          !/\.vue\.js/.test(file)
-        ),
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
@@ -74,24 +58,12 @@ module.exports = {
         }
       },
       {
-        test: /\.pug$/,
-        loader: 'pug-plain-loader'
-      },
-      {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-      {
-        test: /\.less$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'less-loader'
-        ]
       }
     ]
   },
